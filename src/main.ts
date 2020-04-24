@@ -1,6 +1,7 @@
 import Case from "case";
 import path from "path";
 import process from "process";
+import jsStringEscape from "js-string-escape";
 import { IParameters } from "./index";
 import { ProjectFile } from "./abstractions/ProjectFile";
 import { Logger } from "./abstractions/Logger";
@@ -12,7 +13,9 @@ export async function main({ projectName }: IParameters) {
       pascal: Case.pascal(projectName),
       kebab: Case.kebab(projectName),
     },
-    projectDir: path.normalize(`${process.cwd()}\\${Case.kebab(projectName)}`),
+    projectDir: jsStringEscape(
+      path.normalize(`${process.cwd()}\\${Case.kebab(projectName)}`)
+    ),
   };
 
   Logger.init("/", "log.log");

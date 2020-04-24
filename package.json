@@ -12,8 +12,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/js-string-escape": "1.0.0",
     "@types/mustache": "4.0.1",
     "case": "1.6.3",
+    "js-string-escape": "1.0.1",
     "mustache": "4.0.1",
     "reflect-metadata": "0.1.13",
     "tsyringe": "4.1.0",
