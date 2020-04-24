@@ -1,4 +1,5 @@
 import Case from "case";
+import path from "path";
 import process from "process";
 import { IParameters } from "./index";
 import { ProjectFile } from "./abstractions/ProjectFile";
@@ -11,7 +12,7 @@ export async function main({ projectName }: IParameters) {
       pascal: Case.pascal(projectName),
       kebab: Case.kebab(projectName),
     },
-    projectDir: `${process.cwd()}\\${Case.kebab(projectName)}`,
+    projectDir: path.normalize(`${process.cwd()}\\${Case.kebab(projectName)}`),
   };
 
   Logger.init("/", "log.log");
